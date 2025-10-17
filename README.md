@@ -10,7 +10,7 @@ pip install requests
 python orderbook.py
 
 # Custom quantity
-python order_book.py --qty 5
+python orderbook.py --qty 5
 
 ## How I Built This
 
@@ -20,11 +20,7 @@ python order_book.py --qty 5
 - Then tried Gemini - different format! Uses objects like `{"price": "95000", "amount": "0.5"}`
 - Had to write separate parsers for each exchange
 
-### 2. Main Challenges
-- **Sorting**: Confused me at first - needed to sort by price only using `key=lambda x: x[0]`, not the whole list
-- **Gemini format**: Uses "amount" while Coinbase uses "size" - spent time figuring this out
-- **Rate limiting**: Used a closure with a cache dictionary to avoid hitting APIs too fast
-- **Error handling**: Added try/except when I realized APIs can fail or timeout
+
 
 ### 3. How It Works
 1. Fetches order books from both exchanges (rate limited to once per 2 seconds)
